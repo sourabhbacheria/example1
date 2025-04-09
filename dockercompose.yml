@@ -1,0 +1,23 @@
+version:  '3.3'
+services:
+  db:
+    image: mysql
+    container_name: mydb
+    environment:
+      MYSQL_ROOT_PASSWORD: q123
+      # MYSQL_USER: sourabh
+      # MYSQL_PASSWORD: q23
+      # ports:
+      #   - "1122:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: php_myadmin
+    environment:
+      PMA_HOST: db
+      # PMA_USER: sourabh
+      # PMA_PASSWORD: q23
+    ports:
+      - 8080:80
+    depends_on: 
+      - db        
+   
